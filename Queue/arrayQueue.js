@@ -38,6 +38,9 @@ const myQueue = new Queue();
 // Check if the stack is empty
 console.log("Is the stack empty?", myQueue.isEmpty());
 
+// Peek the first element
+console.log("First element: ", myQueue.peek());
+
 // Push elements onto the stack
 myQueue.enqueue(5);
 myQueue.enqueue(10);
