@@ -14,6 +14,14 @@ class Stack {
       return this.items.pop()
   }
 
+  peek(){
+    if (!this.isEmpty()) {
+    return this.items[0];
+    }else{
+        return "Stack is empty"
+    }
+  }
+
   isEmpty() {
       return this.items.length === 0
   }
@@ -37,6 +45,9 @@ myStack.push(15);
 // Display the stack's content
 console.log("Stack after push operations:");
 myStack.print();
+
+// Peek the first element
+console.log("First element: ", myStack.peek());
 
 // Pop an element
 const poppedElement = myStack.pop();
