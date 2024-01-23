@@ -35,19 +35,19 @@ class Queue{
 //Create new Queue
 const myQueue = new Queue();
 
-// Check if the stack is empty
-console.log("Is the stack empty?", myQueue.isEmpty());
+// Check if the queue is empty
+console.log("Is the queue empty?", myQueue.isEmpty());
 
 // Peek the first element
 console.log("First element: ", myQueue.peek());
 
-// Push elements onto the stack
+// Push elements onto the queue
 myQueue.enqueue(5);
 myQueue.enqueue(10);
 myQueue.enqueue(15);
 
-// Display the stack's content
-console.log("Stack after push operations:");
+// Display the queue's content
+console.log("Queue after push operations:");
 myQueue.print();
 
 // Peek the first element
@@ -57,9 +57,9 @@ console.log("First element: ", myQueue.peek());
 const poppedElement = myQueue.dequeue();
 console.log("Popped element:", poppedElement);
 
-// Check if the stack is empty
-console.log("Is the stack empty?", myQueue.isEmpty());
+// Check if the queue is empty
+console.log("Is the queue empty?", myQueue.isEmpty());
 
-// Display the stack's content after pop
-console.log("Stack after dequeue operation:");
+// Display the queue's content after pop
+console.log("Queue after dequeue operation:");
 myQueue.print();
