@@ -53,10 +53,9 @@ myQueue.print();
 // Peek the first element
 console.log("First element: ", myQueue.peek());
 
-// Pop an element
-const poppedElement = myQueue.dequeue();
-console.log("Popped element:", poppedElement);
-
+// Removed an element
+const removedElement = myQueue.dequeue();
+console.log("Removed element:", removedElement);
 // Check if the queue is empty
 console.log("Is the queue empty?", myQueue.isEmpty());
 
