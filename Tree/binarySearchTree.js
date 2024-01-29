@@ -85,6 +85,11 @@ class BinarySearchTree{
       }
     }
   }
+
+  min(root){
+    if (!root.left) return root.value;
+    return this.min(root.left)
+  }
 }
 
 
@@ -103,7 +108,6 @@ console.log('is Empty: ', bst.isEmpty());
 console.log(bst.search(bst.root, 10));
 console.log(bst.search(bst.root, 5));
 console.log(bst.search(bst.root, 15));
-console.log(bst.search(bst.root, 140));
 console.log(bst.search(bst.root, 4));
 
 console.log("Preorder Traversal:");
@@ -117,3 +121,5 @@ bst.postOrder(bst.root);
 console.log('------------------------');
 console.log("LevelOrder Traversal");
 bst.levelOrder();
+
+console.log('Smallest value in the tree: ', bst.min(bst.root));
