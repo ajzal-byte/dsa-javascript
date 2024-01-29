@@ -70,6 +70,21 @@ class BinarySearchTree{
       console.log(root.value);
     }
   }
+
+  levelOrder(){
+    const queue = [];
+    queue.push(this.root);
+    while (queue.length) {
+      let curr = queue.shift();
+      console.log(curr.value);
+      if (curr.left) {
+        queue.push(curr.left);
+      }
+      if (curr.right) {
+        queue.push(curr.right);
+      }
+    }
+  }
 }
 
 
@@ -99,3 +114,6 @@ bst.inOrder(bst.root);
 console.log('----------------------');
 console.log("Postorder Traversal:");
 bst.postOrder(bst.root);
+console.log('------------------------');
+console.log("LevelOrder Traversal");
+bst.levelOrder();
