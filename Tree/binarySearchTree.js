@@ -39,13 +39,26 @@ class BinarySearchTree{
       }
     }
   }
+
+  search(root, value){
+    if(!root) return false;
+    if (root.value == value) return true;
+    if (value < root.value) return this.search(root.left, value);
+    if (value > root.value) return this.search(root.right, value);
+  }
 }
 
 const bst = new BinarySearchTree();
-console.log(bst.isEmpty());
+console.log('is Empty: ', bst.isEmpty());
 
 bst.insert(10);
 bst.insert(5);
 bst.insert(15);
 
-console.log(bst.isEmpty());
+console.log('is Empty: ', bst.isEmpty());
+
+console.log(bst.search(bst.root, 10));
+console.log(bst.search(bst.root, 5));
+console.log(bst.search(bst.root, 15));
+console.log(bst.search(bst.root, 140));
+console.log(bst.search(bst.root, 4));
