@@ -88,7 +88,12 @@ class BinarySearchTree{
 
   min(root){
     if (!root.left) return root.value;
-    return this.min(root.left)
+    return this.min(root.left);
+  }
+
+  max(root){
+    if(!root.right) return root.value;
+    return this.max(root.right);
   }
 }
 
@@ -123,3 +128,4 @@ console.log("LevelOrder Traversal");
 bst.levelOrder();
 
 console.log('Smallest value in the tree: ', bst.min(bst.root));
+console.log('Largest value in the tree: ', bst.max(bst.root));
