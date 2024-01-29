@@ -46,7 +46,17 @@ class BinarySearchTree{
     if (value < root.value) return this.search(root.left, value);
     if (value > root.value) return this.search(root.right, value);
   }
+
+  preOrder(root){
+    if (root) {
+      console.log(root.value);
+      this.preOrder(root.left);
+      this.preOrder(root.right);
+    }
+  }
 }
+
+
 
 const bst = new BinarySearchTree();
 console.log('is Empty: ', bst.isEmpty());
@@ -54,6 +64,8 @@ console.log('is Empty: ', bst.isEmpty());
 bst.insert(10);
 bst.insert(5);
 bst.insert(15);
+bst.insert(3);
+bst.insert(7);
 
 console.log('is Empty: ', bst.isEmpty());
 
@@ -62,3 +74,5 @@ console.log(bst.search(bst.root, 5));
 console.log(bst.search(bst.root, 15));
 console.log(bst.search(bst.root, 140));
 console.log(bst.search(bst.root, 4));
+
+bst.preOrder(bst.root)
