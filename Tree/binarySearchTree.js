@@ -54,6 +54,14 @@ class BinarySearchTree{
       this.preOrder(root.right);
     }
   }
+
+  inOrder(root){
+    if (root) {
+      this.inOrder(root.left);
+      console.log(root.value);
+      this.inOrder(root.right);
+    }
+  }
 }
 
 
@@ -75,4 +83,8 @@ console.log(bst.search(bst.root, 15));
 console.log(bst.search(bst.root, 140));
 console.log(bst.search(bst.root, 4));
 
-bst.preOrder(bst.root)
+console.log("Preorder Traversal:");
+bst.preOrder(bst.root);
+console.log('----------------------');
+console.log("Inorder Traversal:");
+bst.inOrder(bst.root);
