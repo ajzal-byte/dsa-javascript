@@ -115,6 +115,12 @@ class BinarySearchTree{
     }
     return root;
   }
+
+  isBST(node, min = -Infinity, max = Infinity){
+    if(!node) return true;
+    if(node.value < min || node.value > max) return false;
+    return (this.isBST(node.left, min, node.value) && this.isBST(node.right, node.value, max));
+  }
 }
 
 
@@ -156,3 +162,5 @@ console.log("Preorder Traversal:");
 bst.preOrder(bst.root);
 console.log('Smallest value in the tree: ', bst.min(bst.root));
 console.log('Largest value in the tree: ', bst.max(bst.root));
+
+console.log("Is BST: ", bst.isBST(bst.root));
