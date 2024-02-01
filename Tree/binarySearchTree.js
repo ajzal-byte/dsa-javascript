@@ -95,6 +95,26 @@ class BinarySearchTree{
     if(!root.right) return root.value;
     return this.max(root.right);
   }
+
+  delete(value){
+    this.root = this.deleteNode(this.root, value); 
+  }
+
+  deleteNode(root, value){
+    if (root == null) return root;
+    if (value < root.value) {
+      root.left = this.deleteNode(root.left, value);
+    } else if(value > root.value) {
+      root.right = this.deleteNode(root.right, value);
+    }else{
+      if (!root.left && !root.rigt) return null;
+      if(!root.left) return root.right;
+      if(!root.right) return root.left;
+      root.value = this.min(root.right);
+      root.right = this.deleteNode(root.right, root.value);
+    }
+    return root;
+  }
 }
 
 
@@ -127,5 +147,12 @@ console.log('------------------------');
 console.log("LevelOrder Traversal");
 bst.levelOrder();
 
+
+console.log('----------------------');
+bst.delete(10);
+console.log("Preorder Traversal:");
+
+
+bst.preOrder(bst.root);
 console.log('Smallest value in the tree: ', bst.min(bst.root));
 console.log('Largest value in the tree: ', bst.max(bst.root));
