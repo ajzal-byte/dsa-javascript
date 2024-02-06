@@ -22,6 +22,13 @@ class Graph{
     this.adjList[vertex2].add(vertex1);
   }
 
+  hasEdge(vertex1, vertex2){
+    return(
+      this.adjList[vertex1].has(vertex2) &&
+      this.adjList[vertex2].has(vertex1)
+    )
+  }
+
   display(){
     for (const vertex in this.adjList) {
       console.log(`${vertex} -> ${[...this.adjList[vertex]]}`);
@@ -36,5 +43,7 @@ graph.addVertex('C');
 
 graph.addEdge('A', 'B');
 graph.addEdge('B', 'C');
+
+console.log('is A adjacent to B:' ,graph.hasEdge('A', 'B'));
 
 graph.display();
