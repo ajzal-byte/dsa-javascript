@@ -6,6 +6,8 @@ class Graph{
   addVertex(vertex){
     if (!this.adjList[vertex]) {
       this.adjList[vertex] = new Set();
+    }else{
+      console.log('Vertex already exists');
     }
   }
 
@@ -19,6 +21,12 @@ class Graph{
     this.adjList[vertex1].add(vertex2);
     this.adjList[vertex2].add(vertex1);
   }
+
+  display(){
+    for (const vertex in this.adjList) {
+      console.log(`${vertex} -> ${[...this.adjList[vertex]]}`);
+    }
+  }
 }
 
 const graph = new Graph();
@@ -28,3 +36,5 @@ graph.addVertex('C');
 
 graph.addEdge('A', 'B');
 graph.addEdge('B', 'C');
+
+graph.display();
