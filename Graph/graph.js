@@ -34,6 +34,14 @@ class Graph{
     this.adjList[vertex2].delete(vertex1);
   }
 
+  removeVertex(vertex){
+    if (!this.adjList[vertex]) return;
+    for (let adjacentVertex of this.adjList[vertex]) {
+      this.removeEdge(vertex, adjacentVertex);
+    }
+    delete this.adjList[vertex];
+  }
+
   display(){
     for (const vertex in this.adjList) {
       console.log(`${vertex} -> ${[...this.adjList[vertex]]}`);
@@ -52,5 +60,7 @@ graph.addEdge('B', 'C');
 console.log('is A adjacent to B:' ,graph.hasEdge('A', 'B'));
 graph.removeEdge('A', 'B');
 console.log('is A adjacent to B:' ,graph.hasEdge('A', 'B'));
+
+graph.removeVertex('C')
 
 graph.display();
