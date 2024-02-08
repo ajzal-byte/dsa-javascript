@@ -1,3 +1,4 @@
+// ======================================BST====================================
 class Node{
   constructor(value){
     this.value = value;
@@ -47,6 +48,7 @@ class BinarySearchTree{
     if (value > root.value) return this.search(root.right, value);
   }
 
+  // DFS
   preOrder(root){
     if (root) {
       console.log(root.value);
@@ -71,18 +73,15 @@ class BinarySearchTree{
     }
   }
 
+  // BFS
   levelOrder(){
     const queue = [];
     queue.push(this.root);
     while (queue.length) {
       let curr = queue.shift();
       console.log(curr.value);
-      if (curr.left) {
-        queue.push(curr.left);
-      }
-      if (curr.right) {
-        queue.push(curr.right);
-      }
+      if (curr.left) queue.push(curr.left);
+      if (curr.right) queue.push(curr.right);
     }
   }
 
@@ -123,7 +122,7 @@ class BinarySearchTree{
   }
 }
 
-
+  // ==========================TEST CASES==========================
 
 const bst = new BinarySearchTree();
 console.log('is Empty: ', bst.isEmpty());
@@ -133,6 +132,8 @@ bst.insert(5);
 bst.insert(15);
 bst.insert(3);
 bst.insert(7);
+bst.insert(13);
+bst.insert(20);
 
 console.log('is Empty: ', bst.isEmpty());
 
