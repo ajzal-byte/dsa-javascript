@@ -1,3 +1,5 @@
+// ======================================STACK====================================
+
 const LinkedList = require('../Linked List/linkedListwithTail');
 
 class LinkedListStack {
@@ -29,6 +31,8 @@ class LinkedListStack {
     return this.list.print();
   }
 }
+
+// ==========================TEST CASES==========================
 
 const stack = new LinkedListStack();
 console.log(`is stack empty:` + stack.isEmpty());

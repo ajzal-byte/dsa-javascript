@@ -1,3 +1,4 @@
+// ======================================GRAPH====================================
 class Graph{
   constructor(){
     this.adjList = {};
@@ -48,6 +49,8 @@ class Graph{
     }
   }
 }
+
+  // ==========================TEST CASES==========================
 
 const graph = new Graph();
 graph.addVertex('A');

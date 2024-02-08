@@ -1,3 +1,4 @@
+// ======================================HASH TABLE====================================
 class HashTable{
   constructor(size){
     this.table = new Array(size);
@@ -35,6 +36,8 @@ class HashTable{
     }
   }
 }
+
+  // ==========================TEST CASES==========================
 
 const table = new HashTable(50);
 

@@ -1,3 +1,4 @@
+// ======================================STACK====================================
 class Stack {
   constructor() {
       this.items = []
@@ -30,6 +31,8 @@ class Stack {
       console.log(this.items)
   }
 }
+
+  // ==========================TEST CASES==========================
 
 // Create a new stack
 const myStack = new Stack();

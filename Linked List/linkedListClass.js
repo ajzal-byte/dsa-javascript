@@ -1,3 +1,5 @@
+// ======================================LINKED LIST====================================
+
 class Node{
   constructor(data, next = null){
     this.data = data;
@@ -19,6 +21,8 @@ class LinkedList{
     return this.size;
   }
 }
+
+// ==========================TEST CASES==========================
 
 const list = new LinkedList();
 console.log('is List Empty: ', list.isEmpty());
